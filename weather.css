@@ -1,0 +1,342 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  color: #1f3b57;
+  transition: background 0.5s ease;
+}
+
+.bg-cold {
+  background: linear-gradient(135deg, #d8f1ff, #bfe8ff);
+}
+
+.bg-mild {
+  background: linear-gradient(135deg, #dff7eb, #c8f0d8);
+}
+
+.bg-warm {
+  background: linear-gradient(135deg, #fff6d7, #ffe7b3);
+}
+
+.bg-hot {
+  background: linear-gradient(135deg, #ffe3d7, #ffc9b8);
+}
+
+.bg-night {
+  background: linear-gradient(135deg, #dce8ff, #bfd4ff);
+}
+
+.bg-rain {
+  background: linear-gradient(135deg, #dde8f3, #c4d7ea);
+}
+
+.bg-cloudy {
+  background: linear-gradient(135deg, #eef4f8, #dde8f0);
+}
+
+.navbar {
+  width: 100%;
+  height: 75px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+
+  position: sticky;
+  top: 0;
+
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(14px);
+
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+
+  z-index: 100;
+}
+
+#searchBar {
+  width: min(520px, 70vw);
+  height: 48px;
+
+  border: none;
+  outline: none;
+
+  border-radius: 30px;
+
+  padding: 0 20px;
+
+  background: white;
+
+  color: #1d3853;
+
+  font-size: 16px;
+
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+
+  transition: 0.25s;
+}
+
+#searchBar:focus {
+  transform: scale(1.02);
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+#searchBar::placeholder {
+  color: #7890a8;
+}
+
+#searchBtn,
+#theme {
+  width: 46px;
+  height: 46px;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background: white;
+
+  cursor: pointer;
+
+  font-size: 21px;
+
+  transition: 0.25s;
+
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+#searchBtn:hover,
+#theme:hover {
+  transform: translateY(-3px);
+
+  background: #d7f0ff;
+}
+
+#searchBtn:active,
+#theme:active {
+  transform: scale(0.95);
+}
+
+.container {
+  width: min(1200px, 95%);
+
+  margin: 80px auto 40px;
+}
+
+#info {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: flex-start;
+
+  flex-wrap: wrap;
+
+  gap: 30px;
+}
+
+#city {
+  font-size: clamp(3rem, 6vw, 5rem);
+
+  font-weight: 800;
+
+  color: #17324d;
+}
+
+#temp {
+  margin-top: 15px;
+}
+
+#degree {
+  font-size: 2.8rem;
+
+  font-weight: 700;
+
+  color: #204768;
+}
+
+#feelslike {
+  margin-top: 8px;
+
+  color: #56758d;
+
+  font-size: 1rem;
+}
+
+#additional-info {
+  margin-top: 20px;
+
+  font-size: 1rem;
+
+  color: #355d7a;
+
+  line-height: 2;
+
+  font-weight: 600;
+}
+
+.Cards {
+  margin-top: 50px;
+
+  display: flex;
+
+  gap: 18px;
+
+  overflow-x: auto;
+
+  padding: 18px;
+
+  border-radius: 24px;
+
+  background: rgba(255, 255, 255, 0.35);
+
+  backdrop-filter: blur(14px);
+
+  scroll-behavior: smooth;
+}
+
+.Cards::-webkit-scrollbar {
+  height: 8px;
+}
+
+.Cards::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.15);
+
+  border-radius: 20px;
+}
+
+.card {
+  flex-shrink: 0;
+
+  width: 170px;
+
+  background: white;
+
+  border-radius: 18px;
+
+  padding: 20px;
+
+  text-align: center;
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+
+  transition: 0.25s;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+
+  box-shadow: 0 18px 30px rgba(0, 0, 0, 0.12);
+}
+
+.card-title {
+  font-size: 0.9rem;
+
+  text-transform: uppercase;
+
+  font-weight: 700;
+
+  letter-spacing: 1px;
+
+  color: #7390a8;
+}
+
+.weather-emoji {
+  font-size: 3rem;
+
+  margin: 18px 0;
+}
+
+.temperature {
+  font-size: 2.3rem;
+
+  font-weight: 700;
+
+  color: #183153;
+}
+
+.variation {
+  margin-top: 6px;
+
+  color: #6f8599;
+
+  font-size: 0.95rem;
+}
+
+.oneliner {
+  margin-top: 12px;
+
+  font-weight: 600;
+
+  color: #436684;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0 15px;
+  }
+
+  #searchBar {
+    width: 60vw;
+  }
+
+  .container {
+    margin-top: 50px;
+  }
+
+  #info {
+    flex-direction: column;
+
+    gap: 15px;
+  }
+
+  #city {
+    font-size: 3rem;
+  }
+
+  #degree {
+    font-size: 2.2rem;
+  }
+
+  #additional-info {
+    margin-top: 0;
+  }
+
+  .card {
+    width: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  #searchBar {
+    width: 55vw;
+  }
+
+  #city {
+    font-size: 2.5rem;
+  }
+
+  .card {
+    width: 135px;
+
+    padding: 16px;
+  }
+
+  .weather-emoji {
+    font-size: 2.5rem;
+  }
+
+  .temperature {
+    font-size: 2rem;
+  }
+}
